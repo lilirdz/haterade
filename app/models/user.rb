@@ -5,5 +5,16 @@ class User < ApplicationRecord
   has_many :likes, through: :posts
   has_many :dislike, through: :posts
 
+  def total_likes 
+    sum = 0
 
+    self.posts.each do |post|
+      if post.likes
+        sum += post.likes
+      else
+        post.likes = 0
+      end
+    end    
+    sum
+  end
 end

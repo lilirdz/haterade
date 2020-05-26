@@ -12,6 +12,6 @@ class CategoriesController < ApplicationController
     
 
     def current_category
-        @category = Category.find(params[:id])
+        @category = Category.friendly.find(params[:id])
     end
 end

@@ -7,10 +7,11 @@ class UsersController < ApplicationController
   end
 
   def current_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def show
+    
   end
 
   def edit

@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :likes, through: :posts
   has_many :dislike, through: :posts
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   def total_likes 
     sum = 0
 

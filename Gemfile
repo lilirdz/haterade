@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 #gem for bootstrap
 gem 'bootstrap-sass'
+gem 'friendly_id', '~> 5.2.4'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # Add jquery for bootstrap requirement

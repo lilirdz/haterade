@@ -6,6 +6,8 @@
 
 <h3><%= @post.content %></h3>
 
+<%= render 'comments/comment' %>
+
 <%= form_with model: @post, method: :destroy do |f| %>
-<%= f.submit "Delete" %>
+<%= f.submit "Delete Opinion" %>
 <% end %>

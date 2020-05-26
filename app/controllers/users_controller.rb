@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    byebug
       if @user.update(user_params)
         flash[:success] = "Object was successfully updated"
         redirect_to @user
@@ -30,7 +29,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :password, :username, :bio)
+      params.require(:user).permit(:name, :bio)
     end
 
 end

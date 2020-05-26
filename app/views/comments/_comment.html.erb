@@ -1,0 +1,13 @@
+<% if flash[:errors] %>
+<% flash.errors.each do |error| %>
+<%= error %>
+<% end %>
+<% end %>
+
+<%= form_with model: @comment do |f| %>
+<%= f.label "Fight Me!" %>
+<br>
+<%= f.text_area :content, size: '60x5' %>
+<br>
+<%= f.submit "Post Comment" %>
+<% end %>

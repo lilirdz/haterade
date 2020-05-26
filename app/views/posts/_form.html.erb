@@ -1,0 +1,17 @@
+<% if flash[:errors] %>
+<% flash.errors.each do |error| %>
+<%= error %>
+<% end %>
+<% end %>
+
+
+<%= form_with model: @post do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :content %>
+<%= f.text_area :content %>
+
+<%= f.collection_select :category_id, @categories,:id,:name %>
+<%= f.submit %>
+<% end %>

@@ -1,3 +1,11 @@
 <h1><%= @post.title %></h1>
 
+<h4> Category:
+<%= link_to @post.category.name, category_path(@post.category.id) %>
+</h4>
+
 <h3><%= @post.content %></h3>
+
+<%= form_with model: @post, method: :destroy do |f| %>
+<%= f.submit "Delete" %>
+<% end %>

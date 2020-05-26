@@ -1,4 +1,10 @@
-<%= form_with model:@user do |f|%>
-<p>Update name: <%=t.text_field :name%></p>
-<p>Update bio: <%=t.text_field :bio%></p>
+<%= form_with model: @user do |f|%>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :bio %>
+<%= f.text_area :bio %>
+
+
 <%end%>

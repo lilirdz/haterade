@@ -1,0 +1,8 @@
+<h1><%= @category.name %></h1>
+
+<h3>All Unpopular Music Opinions </h3>
+<% @posts.each do |post| %>
+<li>
+<%= post.title %>
+</li>
+<% end %>

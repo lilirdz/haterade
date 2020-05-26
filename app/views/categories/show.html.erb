@@ -1,8 +1,8 @@
 <h1><%= @category.name %></h1>
 
 <h3>All Unpopular Music Opinions </h3>
-<% @posts.each do |post| %>
+<% @category.posts.each do |post| %>
 <li>
-<%= post.title %>
+<%= link_to post.title, post_path(post) %>
 </li>
 <% end %>

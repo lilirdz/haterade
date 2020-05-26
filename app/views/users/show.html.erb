@@ -1,13 +1,14 @@
 <p>Username: <%= @user.name %></p>
 <p>Bio: <%= @user.bio %></p>
 
+<p>Most Hated Post goest here</p>
 
-<p>Most Hated<%= @user.name %></p>
 
 
-<p>All Posts</p>
+<p>All My Posts</p><br>
 <% @user.posts.each do |post|%>
-<%= link_to post.content %>
+<%= link_to post.title, post%><br>
+<%= post.content%><br><br><br>
 <%end%>
 
 

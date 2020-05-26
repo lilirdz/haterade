@@ -1,2 +1,13 @@
-<p><%= @user.name %></p>
-<%= @user.get_content%>
+<p>Username: <%= @user.name %></p>
+<p>Bio: <%= @user.bio %></p>
+
+
+<p>Most Hated<%= @user.name %></p>
+
+
+<p>All Posts</p>
+<% @user.posts.each do |post|%>
+<%= link_to post.content %>
+<%end%>
+
+

@@ -10,6 +10,7 @@
 <%= link_to post.title, post%><br>
 <%= post.content%><br><br><br>
 <%end%>
+
 <button>
-<%= link_to "Edit User", edit_user_path %>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
 </button>

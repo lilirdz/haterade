@@ -9,9 +9,23 @@
 
 <%= button_to "Like", {:controller => 'likes',:action => 'create',:post_id => @post.id}, method: :patch %>
 
+<%= form_with url:"/like", method: "post" do |f| %>
+<%= f.hidden_field :post_id, :value => @post.id %>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
+<%= f.submit "Like" %> | <%= @post.likes.count %>
+<% end %>
+
+
+
 
 <%= render 'comments/form' %>
 
 <%= form_with model: @post, method: :destroy do |f| %>
 <%= f.submit "Delete Opinion" %>
+<% end %>
+
+<% @post.comments.each do |comment| %>
+<li>
+<%= comment.content %>
+</li>
 <% end %>

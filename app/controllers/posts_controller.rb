@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
     
-    before_action :current_post, only: [:show,:edit,:update,:destroy]
+    before_action :current_post, only: [:show,:edit,:update,:destroy,:like]
     
     def show
-
+        @comment = @post.comments.new
     end
 
     def new
         @post = Post.new
         @categories = Category.all
+        # @comment = Comment.new(post_id: params[:post_id])
     end
 
     def create
@@ -39,6 +40,12 @@ class PostsController < ApplicationController
     def current_post
         @post = Post.friendly.find(params[:id])
     end
+
+    # def like
+    #     @post.add_like
+    #     @post.save
+    #     redirect_to post_path(@post)
+    # end
 
     private
 

@@ -4,17 +4,19 @@ class CommentsController < ApplicationController
 
     def new
         @comment = Comment.new
-        @posts = Post.all
+        # @posts = Post.all
+        # @users = User.all
     end
 
     def create
         comment = Comment.new(comment_params)
         if comment.valid?
             comment.save
-        #   redirect_to comment_path(comment)
+            redirect_to post_path(comment.post)
+            byebug
           #redirect to the post
-        else
-          flash[:errors] = comment.errors.full_messages
+        # else
+        #   flash[:errors] = comment.errors.full_messages
         end
     end
     
@@ -24,6 +26,7 @@ class CommentsController < ApplicationController
 
     def update
         @comment.update(comment_params)
+        redirect_to post_path(@comment.post)
         #redirect to the post
     end
     

@@ -5,6 +5,10 @@
 </h4>
 
 <h3><%= @post.content %></h3>
+<br>
+
+<%= button_to "Like", {:controller => 'likes',:action => 'create',:post_id => @post.id}, method: :patch %>
+
 
 <%= render 'comments/comment' %>
 

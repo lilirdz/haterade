@@ -2,6 +2,10 @@ class PostsController < ApplicationController
     
     before_action :current_post, only: [:show,:edit,:update,:destroy,:like]
     
+    def index
+      @posts = Post.all
+    end
+    
     def show
         @comment = @post.comments.new
     end

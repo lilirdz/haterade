@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :comments, through: :posts
   has_many :likes, through: :posts
   has_many :dislikes, through: :posts
-
+  has_secure_password
+  
   extend FriendlyId
   friendly_id :username, use: :slugged
 

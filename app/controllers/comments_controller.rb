@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     def create
       # byebug
         comment = Comment.new(comment_params)
-        byebug
+        # byebug
         # if comment.valid?
             comment.save
             redirect_to post_path(comment.post)

@@ -1,0 +1,19 @@
+<p>Login</p>
+
+<%= form_for(@user) do |f|%>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :password%>
+<%= f.password_field :password%>
+<br>
+<%= f.label :password_confirmation%>
+<%= f.password_field :password_confirmation%>
+<br>
+<p class="emoji-picker-container">
+<%= f.label :bio %>
+<%= f.text_area :bio, size: '60x5', data: { emojiable: true } %>
+</p>
+<br>
+<%= f.submit%>

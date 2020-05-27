@@ -1,12 +1,5 @@
-<% if flash[:error] %>
-<% flash[:error].each do |error| %>
-<%= error %>
-<% end %>
 
-<% end %>
-
-
-<%= form_with url: '/sessions' do |f| %>
+<%= form_with url: '/login' do |f| %>
 <%= f.label :username %>
 <%= f.text_field :username %>
 <br>

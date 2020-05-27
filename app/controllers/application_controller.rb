@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
-    # before_action :authenticated
+    before_action :authenticated
 
     def current_user
         if session[:user_id]

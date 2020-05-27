@@ -5,6 +5,7 @@
 <% end %>
 
 <%= form_with model: @comment do |f| %>
+<%= f.hidden_field :post_id %>
 <%= f.label "Fight Me!" %>
 <br>
 <%= f.text_area :content, size: '60x5' %>

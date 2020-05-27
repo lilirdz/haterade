@@ -14,14 +14,11 @@
 <button>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
 </button>
-<<<<<<< HEAD
-=======
 
 <br>
 
-<%= form_with model: @session, method: :destroy do |f|%>
+<%= form_with url: '/logout' method: :destroy do |f|%>
 <%= f.submit "Logout" %>
 
 <% end %>
 
->>>>>>> master

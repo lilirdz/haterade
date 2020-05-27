@@ -7,15 +7,18 @@
 <h3><%= @post.content %></h3>
 <br>
 
-<%= button_to "Like", {:controller => 'likes',:action => 'create',:post_id => @post.id}, method: :patch %>
 
-<%= form_with url:"/like", method: "post" do |f| %>
+<%= form_with url:"/like", method: :post do |f| %>
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
 <%= f.submit "Like" %> | <%= @post.likes.count %>
 <% end %>
 
-
+<%= form_with url:"/dislike", method: :post do |f| %>
+<%= f.hidden_field :post_id, :value => @post.id %>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
+<%= f.submit "Dislike" %> | <%= @post.dislikes.count %>
+<% end %>
 
 
 <%= render 'comments/form' %>

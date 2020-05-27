@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   post '/like', to: "likes#create"
+  post '/dislike', to: "dislikes#create"
+
 
 end

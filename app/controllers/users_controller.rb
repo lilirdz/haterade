@@ -18,13 +18,13 @@ class UsersController < ApplicationController
   end
 
   def update
-      if @user.update(user_params)
-        flash[:success] = "Object was successfully updated"
+     @user.update(user_params)
+        # flash[:success] = "Object was successfully updated"
         redirect_to @user
-      else
-        flash[:error] = "Something went wrong"
-        redirect_to edit_user_path(@user)
-      end
+      # else
+        # flash[:error] = "Something went wrong"
+      #   redirect_to edit_user_path(@user)
+      # end
   end
 
   private

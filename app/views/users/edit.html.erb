@@ -4,13 +4,16 @@
 <% end %>
 <% end %>
 
-<%= form_with model: @user do |f|%>
+<%= form_for(@user) do |f|%>
 
 <%= f.label :name %>
 <%= f.text_field :name %>
 <br>
+<p class="emoji-picker-container">
 <%= f.label :bio %>
-<%= f.text_area :bio %>
+<%= f.text_area :bio, size: '60x5', data: { emojiable: true } %>
+</p>
+<br>
 <%= f.submit%>
 
 <%end%>

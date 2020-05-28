@@ -10,10 +10,13 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
 
+  get '/signup', to: "users#new"
+  post '/signup', to: "users#create"
+
   post '/like', to: "likes#create"
   post '/dislike', to: "dislikes#create"
-  # get '/', to: "sessions#welcome"
-  root :to =>'sessions#welcome'
+  get '/', to: "sessions#new"
+  # root :to =>'sessions#welcome'
 
 
 end

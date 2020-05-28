@@ -16,7 +16,9 @@ class SessionsController < ApplicationController
             redirect_to user_path(@user)
         else
             # flash[:errors] = "Your username and/or password is incorrect. Please try again."
-            redirect_to '/login'
+            # redirect_to '/login'
+            redirect_to signup_path
+
         end
     end
 

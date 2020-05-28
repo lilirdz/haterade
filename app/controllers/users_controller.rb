@@ -28,6 +28,8 @@ class UsersController < ApplicationController
     # else
     #   redirect_to "/users/#{session[:user_id]}"
     # end
+    
+    
     @most_hated = Post.most_hated_post
   end
 

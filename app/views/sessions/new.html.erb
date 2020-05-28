@@ -1,15 +1,23 @@
-
+<div class = "login">
+<img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/T812A2PA3140PT17X52Y54D11616160S67/views/1,width=650,height=650,appearanceId=2.jpg" class="img-fluid" alt="Responsive image">
 <%= form_with url: '/login' do |f| %>
 <%= f.label :username %>
+<br>
 <%= f.text_field :username %>
 <br>
 <%= f.label :password %>
+<br>
+
 <%= f.password_field :password %>
+
+<br>
 <br>
 <%= f.submit "Login" %>
-
+<br>
+<br>
 <p>OR</p>
 <%= button_to "Sign Up", '/signup', method: :get  %>
 
 
 <% end %>
+</div>

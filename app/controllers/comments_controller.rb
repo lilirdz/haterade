@@ -4,24 +4,21 @@ class CommentsController < ApplicationController
 
     def new
         @comment = Comment.new
-        # @posts = Post.all
-        # @users = User.all
     end
     
     def show
     end
     
     def create
-      # byebug
         comment = Comment.new(comment_params)
-        # byebug
-        # if comment.valid?
+        if comment.valid?
             comment.save
             redirect_to post_path(comment.post)
-          #redirect to the post
-        # else
-        #   flash[:errors] = comment.errors.full_messages
-        # end
+        else
+          flash.now[:errors] = comment.errors.full_messages
+        #   flash.now[:errors] = "Comment is too short. Try again."
+          redirect_to post_path(comment.post)
+        end
     end
     
 
@@ -31,7 +28,6 @@ class CommentsController < ApplicationController
     def update
         @comment.update(comment_params)
         redirect_to post_path(@comment.post)
-        #redirect to the post
     end
     
 

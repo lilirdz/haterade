@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
     before_action :authenticated
 
     def current_user
-        if session[:user_id]
+        # if session[:user_id]
             @user = User.friendly.find(session[:user_id])
-        end
+        # end
     end
     
     

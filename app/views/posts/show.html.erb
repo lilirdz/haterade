@@ -34,7 +34,7 @@
 <br>
 <% if comment.content != nil %>
 <h4>
-"<%= comment.content %>" - <%= link_to @post.user.name, user_path(@post.user.username) %>
+"<%= comment.content %>" - <%= link_to comment.user.name, user_path(comment.user.username) %>
 </h4>
 <% end %>
 <% end %>

@@ -1,16 +1,16 @@
+
+
 <p>Username: <%= @user.name %></p>
 <p>Bio: <%= @user.bio %></p>
 
 <p>Most Hated Post goes here</p>
 
-
-
+<div class="container text-center">
 <p>All My Posts</p><br>
 <% @user.posts.each do |post|%>
 <%= link_to post.title, post%><br>
 <%= post.content%><br><br><br>
 <%end%>
-
 <button>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
 </button>
@@ -21,4 +21,5 @@
 <%= f.submit "Logout" %>
 
 <% end %>
+</div>
 

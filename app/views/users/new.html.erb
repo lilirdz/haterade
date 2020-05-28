@@ -1,9 +1,12 @@
 <p>Sign Up</p>
 
-<%= form_for(@user) do |f|%>
+<%= form_with model: @user do |f|%>
 
 <%= f.label :name %>
 <%= f.text_field :name %>
+<br>
+<%= f.label :username %>
+<%= f.text_field :username %>
 <br>
 <%= f.label :password%>
 <%= f.password_field :password%>
@@ -17,3 +20,4 @@
 </p>
 <br>
 <%= f.submit%>
+<% end %>

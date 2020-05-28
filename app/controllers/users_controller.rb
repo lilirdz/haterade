@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    byebug
     user= User.new(user_params)
     if user.valid?
       user.save
@@ -15,6 +16,10 @@ class UsersController < ApplicationController
     else
       resources new_user_path
     end
+  end
+
+  def new
+    @user = User.new
   end
 
   def show

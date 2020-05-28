@@ -5,6 +5,10 @@ class User < ApplicationRecord
   has_many :likes, through: :posts
   has_many :dislikes, through: :posts
   has_secure_password
+
+  validates :name, presence: true
+  validates :username, presence: true
+
   
   extend FriendlyId
   friendly_id :username, use: :slugged

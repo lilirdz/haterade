@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authenticated, only: [:new, :create]
-  before_action :current_user, only: [:show, :edit, :update]
+  before_action :chosen_user, only: [:show, :edit, :update]
 
   def index
     @users = User.all
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user
     else
-      resources new_user_path
+      redirect_to new_user_path
     end
   end
 
@@ -39,12 +39,11 @@ class UsersController < ApplicationController
       redirect_to user_path(session[:user_id])
   end
 
-  def current_user
-    # byebug
-    if session[:user_id]
-      @user = User.friendly.find(params[:id])
-    end
+  def chosen_user
+    @user = User.friendly.find(params[:id])
   end
+
+ 
 
   private
     def user_params

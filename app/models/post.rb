@@ -7,4 +7,8 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  def self.most_hated_post
+    self.all.sort {|a,b| b.dislikes.count <=> a.dislikes.count}.first
+  end
+
 end

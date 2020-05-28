@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post '/like', to: "likes#create"
   post '/dislike', to: "dislikes#create"
+  # get '/', to: "sessions#welcome"
+  root :to =>'sessions#welcome'
 
 
 end

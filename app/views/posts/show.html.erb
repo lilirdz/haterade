@@ -6,7 +6,7 @@
 
 <h3><%= @post.content %></h3>
 <br>
-<h3>Written By: <%= @post.user.name %></h3>
+<h3>Written By: <%= link_to @post.user.name, user_path(@user) %></h3>
 
 <%= form_with url:"/like", method: :post do |f| %>
 <%= f.hidden_field :post_id, :value => @post.id %>

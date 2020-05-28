@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController
-    
+
     skip_before_action :authenticated, only: [:new,:create]
-    
+
     def new
-        
+    end
+
+    def welcome
     end
 
     def create

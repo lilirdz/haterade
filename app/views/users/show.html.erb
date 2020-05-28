@@ -1,8 +1,8 @@
 <p>Username: <%= @user.name %></p>
 <p>Bio: <%= @user.bio %></p>
 
-<p>Most Hated Post goes here</p>
-
+<p>Most Hated Post</p>
+<%= link_to @most_hated.title, post_path(@most_hated) %>
 
 
 <p>All My Posts</p><br>

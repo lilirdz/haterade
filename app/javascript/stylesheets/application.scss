@@ -15,5 +15,8 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 // @import 'rails_emoji_picker';
-@import "bootstrap/scss/bootstrap";
+
+@import "~bootstrap/scss/bootstrap"; 
+@import "./_custom";
+
 

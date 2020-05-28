@@ -22,7 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 #gem for bootstrap
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap', '~> 4.5.0'
 gem 'friendly_id', '~> 5.2.4'
 gem 'rails_emoji_picker'
 #run rails g rails_emoji_picker:install

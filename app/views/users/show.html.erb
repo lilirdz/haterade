@@ -1,6 +1,10 @@
+
+
 <p>Username: <%= @user.name %></p>
 <p>Bio: <%= @user.bio %></p>
 
+
+<div class="container text-center">
 <p>Most Hated Post</p>
 <%= link_to @most_hated.title, post_path(@most_hated) %>
 
@@ -10,7 +14,6 @@
 <%= link_to post.title, post%><br>
 <%= post.content%><br><br><br>
 <%end%>
-
 <button>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
 </button>
@@ -21,4 +24,5 @@
 <%= f.submit "Logout" %>
 
 <% end %>
+</div>
 

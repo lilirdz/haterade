@@ -14,15 +14,19 @@
 <%= link_to post.title, post%><br>
 <%= post.content%><br><br><br>
 <%end%>
+
+
+<% if @user.id == session[:user_id] %>
 <button>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
 </button>
+<% end %>
 
 <br>
-
+<% if @user.id == session[:user_id] %>
 <%= form_with url:'/logout', method: "delete" do |f|%>
 <%= f.submit "Logout" %>
-
+<% end %>
 <% end %>
 </div>
 

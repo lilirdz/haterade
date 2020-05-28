@@ -3,9 +3,12 @@
 <p>Username: <%= @user.name %></p>
 <p>Bio: <%= @user.bio %></p>
 
-<p>Most Hated Post goes here</p>
 
 <div class="container text-center">
+<p>Most Hated Post</p>
+<%= link_to @most_hated.title, post_path(@most_hated) %>
+
+
 <p>All My Posts</p><br>
 <% @user.posts.each do |post|%>
 <%= link_to post.title, post%><br>
@@ -17,7 +20,7 @@
 
 <br>
 
-<%= form_with url: '/logout', method: :destroy do |f|%>
+<%= form_with url:'/logout', method: "delete" do |f|%>
 <%= f.submit "Logout" %>
 
 <% end %>

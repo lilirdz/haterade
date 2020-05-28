@@ -6,7 +6,7 @@
 
 <h3><%= @post.content %></h3>
 <br>
-
+<h3>Written By: <%= @post.user.name %></h3>
 
 <%= form_with url:"/like", method: :post do |f| %>
 <%= f.hidden_field :post_id, :value => @post.id %>
@@ -23,13 +23,19 @@
 
 <%= render 'comments/form' %>
 
-<%= form_with model: @post, method: :destroy do |f| %>
+<% if @post.user_id == session[:user_id] %>
+<%= form_with model: @post, method: "delete" do |f| %>
 <%= f.submit "Delete Opinion" %>
 <% end %>
+<% end %>
+
 
 <% @post.comments.each do |comment| %>
-<li>
-<%= comment.content %>
-</li>
+<br>
+<% if comment.content != nil %>
+<h4>
+"<%= comment.content %>" - <%= link_to @post.user.name, user_path(@post.user.username) %>
+</h4>
+<% end %>
 <% end %>
 

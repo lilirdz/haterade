@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  skip_before_action :authenticated, only: [:new, :create]
   before_action :current_user, only: [:show, :edit, :update]
 
   def index
@@ -18,7 +18,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    # if session[:user_id] == params[:id].to_i
+    #   @user = User.find(session[:user_id])
+    # else
+    #   redirect_to "/users/#{session[:user_id]}"
+    # end
+    @most_hated = Post.most_hated_post
   end
 
   def edit

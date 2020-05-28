@@ -7,8 +7,7 @@ class PostsController < ApplicationController
     end
     
     def show
-        @comment = @post.comments.new
-        # @like = Like.new
+        @comment = @post.comments.create
     end
 
     def new
@@ -45,12 +44,6 @@ class PostsController < ApplicationController
     def current_post
         @post = Post.friendly.find(params[:id])
     end
-
-    # def like
-    #     @post.add_like
-    #     @post.save
-    #     redirect_to post_path(@post)
-    # end
 
     private
 

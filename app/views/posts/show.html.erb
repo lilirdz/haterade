@@ -11,15 +11,16 @@
 <%= form_with url:"/like", method: :post do |f| %>
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
-<%= f.submit "Like" %> | <%= @post.likes.count %>
+<%= f.submit "Like" %>
 <% end %>
-
+<br>
 <%= form_with url:"/dislike", method: :post do |f| %>
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
-<%= f.submit "Dislike" %> | <%= @post.dislikes.count %>
+<%= f.submit "Dislike" %>
 <% end %>
-
+<br>
+<p>Total Likes <%= @post.likes.count %> Total Dislikes <%= @post.dislikes.count %></p>
 
 <%= render 'comments/form' %>
 

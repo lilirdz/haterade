@@ -34,9 +34,16 @@ li {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 30%;
 }
-
+.img-fluid-post {
+  // max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 17%;
+}
 .login {
   font-size: 20px;
   text-align: center;
@@ -88,3 +95,4 @@ li {
   color: #e95c20ff;
   font-size: 28px;
 }
+

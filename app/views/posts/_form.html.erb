@@ -3,19 +3,25 @@
 <%= error %>
 <% end %>
 <% end %>
-
-
-<%= form_with model: @post do |f| %>
-<h4><%= f.label :title %></h4>
 <br>
-<%= f.text_area :title, size: '40x1' %>
-<br><br>
-<h4><%= f.label :content %></h4>
+<br>
+<br>
 
-<%= f.text_area :content, size: '60x5' %>
-<br><br>
-<%= f.collection_select :category_id, @categories,:id,:name %>
-<%= f.hidden_field :user_id, :value => session[:user_id] %>
-<br><br>
-<%= f.submit %>
-<% end %>
+
+<div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title signup_title">New Unpopular Opinion</h5>
+    <p class="card-text"><%= form_with model: @post do |f|%></p>
+    <p class="card-text"><%=f.label :title%></p>
+    <p class="card-text"><%=f.text_area :title, size:'40x1'%></p>
+    <p class="card-text"><%=f.label :content%></p>
+    <p class="card-text"><%=f.text_area :content, size: '45x5'%></p>
+    <p class="card-text"><%=f.collection_select :category_id, @categories,:id,:name%></p>
+    <p class="card-text"><%=f.hidden_field :user_id, :value => session[:user_id]%></p>
+
+    <p class="card-text"><%=f.submit "Post"%></p>
+
+    <p class="card-text"><%end%></p>
+
+  </div>
+</div>

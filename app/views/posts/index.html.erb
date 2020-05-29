@@ -1,6 +1,16 @@
-<h1> All Posts </h1>
-<% @posts.each do |post|%>
-<li>
-<%= link_to post.title, post %>
-</li>
+<br>
+<br>
+
+
+<div class="container text-center">
+  <h1 class ="h1posts">All Posts</h1><br>
+  <div class="row">
+      <% @posts.each do |post|%>
+      <br>
+    <div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%= link_to post.title, post%></h5>
+    <p class="card-text"><%= post.content%></p>
+  </div>
+</div>
 <%end%>

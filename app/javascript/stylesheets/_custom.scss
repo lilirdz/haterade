@@ -3,10 +3,6 @@ body {
   margin: auto;
 }
 
-nav li {
-  color: red;
-}
-
 a,
 a:hover {
   color: #e95c20ff;
@@ -16,6 +12,10 @@ a:hover {
 h1 {
   color: #006747ff;
   text-align: center;
+}
+
+.h1posts {
+  color: #e95c20ff;
 }
 
 h3,
@@ -58,11 +58,6 @@ li {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-input {
-  // background-color: white;
-  // display: inline-block;
-}
-
 .card-columns {
   @include media-breakpoint-only(lg) {
     column-count: 4;
@@ -87,4 +82,9 @@ input {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.signup_title {
+  color: #e95c20ff;
+  font-size: 28px;
 }

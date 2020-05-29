@@ -1,2 +1,17 @@
+<br>
 <h1>Welcome to Haterade!</h1>
+<br>
 <img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/T812A2PA3140PT17X52Y54D11616160S67/views/1,width=650,height=650,appearanceId=2.jpg" class="img-fluid" alt="Responsive image">
+<br>
+<br>
+<div class="container text-center">
+  <h3>- Most Hated Opinion of All Time -</h3><br>
+  <div class="row">
+      <% @most_hated.title%>
+      <br>
+    <div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%= link_to @most_hated.title, @most_hated%></h5>
+    <p class="card-text"><%= @most_hated.content%></p>
+  </div>
+</div>

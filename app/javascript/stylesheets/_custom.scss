@@ -14,6 +14,10 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  text-align: center;
+}
+
 li {
   list-style-type: none;
 }
@@ -44,6 +48,8 @@ li {
   /* Added */
   margin-bottom: 10px;
   /* Added */
+  border-top: 10px solid #006747ff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input {

@@ -1,26 +1,37 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
 <h1><%= @post.title %></h1>
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">Category:
+    <%= link_to @post.category.name, category_path(@post.category.name.downcase) %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Written By: <%= link_to @post.user.name, user_path(@post.user.username) %></h6>
+    <p class="card-text"><h3><%= @post.content %></h3></p>
+    <div>
+    <p>Total Likes: <%= @post.likes.count %></p>
 
-<h4> Category:
-<%= link_to @post.category.name, category_path(@post.category.name.downcase) %>
-</h4>
-
-<h3><%= @post.content %></h3>
-<br>
-<h3>Written By: <%= link_to @post.user.name, user_path(@post.user.username) %></h3>
-
-<%= form_with url:"/like", method: :post do |f| %>
-<%= f.hidden_field :post_id, :value => @post.id %>
-<%= f.hidden_field :user_id, :value => session[:user_id] %>
-<%= f.submit "Like" %>
-<% end %>
-<br>
+    <img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/T812A2PA3140PT17X52Y54D11616160S67/views/1,width=650,height=650,appearanceId=2.jpg" class="img-fluid-post" alt="Responsive image">
+    <button class = "btn float-right">
+  <%= form_with url:"/like", method: :post do |f| %>
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  <%= f.submit "#{@post.likes.count} Likes" %>
+  <% end %>
+</button>
+<button class = "btn float-left">
 <%= form_with url:"/dislike", method: :post do |f| %>
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
-<%= f.submit "Dislike" %>
+<%= f.submit "#{@post.dislikes.count} Dislike" %>
 <% end %>
-<br>
-<p>Total Likes: <%= @post.likes.count %> Total Dislikes: <%= @post.dislikes.count %></p>
+</button>
+  </div>
+</div>
+
 
 <%= render 'comments/form' %>
 <br>
@@ -42,34 +53,10 @@
 <br>
 <% if comment.content != nil %>
 <h4>
-"<%= comment.content %>" - <%= link_to comment.user.name, user_path(comment.user.username) %>
+"<%= comment.content %>" - <%= link_to comment.user.username, user_path(comment.user.username) %>
 </h4>
 <% end %>
 <% end %>
 
-<div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small>3 days ago</small>
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small>Donec id elit non mi porta.</small>
-  </a>
-  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
-  </a>
-  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">List group item heading</h5>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
-  </a>
+
 </div>

@@ -12,6 +12,7 @@
 <h3>All My Posts</h3><br>
 <% @user.posts.each do |post|%>
 <br>
+
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><%= link_to post.title, post%></h5>
@@ -27,15 +28,12 @@
 <% end %>
 
 <br>
+<button>
 <% if @user.id == session[:user_id] %>
 <%= form_with url:'/logout', method: "delete" do |f|%>
 <%= f.submit "Logout" %>
 <% end %>
 <% end %>
+</button>
 </div>
 
-<p>
-      <a href="/logout" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-        </a>
-      </p> 

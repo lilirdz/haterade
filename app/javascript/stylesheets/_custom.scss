@@ -3,6 +3,10 @@ body {
   margin: auto;
 }
 
+nav li {
+  color: red;
+}
+
 a,
 a:hover {
   color: #e95c20ff;
@@ -14,7 +18,9 @@ h1 {
   text-align: center;
 }
 
-h3 {
+h3,
+h4 {
+  color: #e95c20ff;
   text-align: center;
 }
 
@@ -65,4 +71,20 @@ input {
   @include media-breakpoint-only(xl) {
     column-count: 5;
   }
+}
+
+.profile-picture {
+  width: 225px;
+  height: 225px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.list-group {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

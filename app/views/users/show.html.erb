@@ -1,35 +1,50 @@
-
 <br>
-<div class="container text-center">
-<h3>All My Posts</h3><br>
-<div class="row">
-<% @user.posts.each do |post|%>
+<br>
+<br>
 <br>
 <div class="card" style="width: 28rem;">
+  <img src="https://www.xeus.com/wp-content/uploads/2014/09/One_User_Orange.png" class="profile-picture" alt="...">
   <div class="card-body">
+    <h5 class="card-title">Hello <%= @user.username %>!</h5>
+    <p class="card-text">Bio: <%= @user.bio %></p>
+  
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Name: <%= @user.name %></li>
+    <li class="list-group-item">
+    
+    <% if @user.id == session[:user_id] %>
+    <%= link_to "Edit Profile", edit_user_path(@user) %>
+      <%end%>
+   
+    </li>
+  </ul>
+  </div>
+</div>
+<br>
+<div class="container text-center">
+  <h3>All My Posts</h3><br>
+  <div class="row">
+      <% @user.posts.each do |post|%>
+      <br>
+    <div class="card" style="width: 28rem;">
+    <div class="card-body">
     <h5 class="card-title"><%= link_to post.title, post%></h5>
     <p class="card-text"><%= post.content%></p>
   </div>
 </div>
 <%end%>
 <br>
-
-
-<div class="container text-center">
-  <p>Name: <%= @user.name %></p>
-  <p>Username: <%= @user.username %></p>
-  <p>Bio: <%= @user.bio %></p>
-  <% if @user.id == session[:user_id] %>
-  <button style="float: right">
-  <%= link_to "Edit Profile", edit_user_path(@user) %>
-  </button>
-  <% end %>
 </div>
-
+</div>
+<br>
+<br>
+<br>
+<div class="container text-center">
 <div>
   <% if @user.id == session[:user_id] %>
   <%= form_with url:'/logout', method: "delete" do |f|%>
   <%= f.submit "Logout" %>
   <% end %>
   <% end %>
+</div>
 </div>

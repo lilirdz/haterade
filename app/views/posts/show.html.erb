@@ -25,6 +25,13 @@
 <%= render 'comments/form' %>
 <br>
 <% if @post.user_id == session[:user_id] %>
+    <%= link_to "Edit Post", edit_post_path %>
+<% end %>
+
+
+
+<br>
+<% if @post.user_id == session[:user_id] %>
 <%= form_with model: @post, method: "delete" do |f| %>
 <%= f.submit "Delete Opinion" %>
 <% end %>

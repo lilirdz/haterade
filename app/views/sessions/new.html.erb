@@ -1,26 +1,20 @@
 <div class = "login">
 <img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/T812A2PA3140PT17X52Y54D11616160S67/views/1,width=650,height=650,appearanceId=2.jpg" class="img-fluid" alt="Responsive image">
-<%= form_with url: '/login' do |f| %>
-<%= f.label :username %>
+</div>
 <br>
-<%= f.text_field :username %>
-<br>
-<%= f.label :password %>
-<br>
+<div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title signup_title">Login</h5>
+    <p class="card-text"><%= form_with url: '/login' do |f|%></p>
+    <p class="card-text"><%=f.label :username%></p>
+    <p class="card-text"><%=f.text_field :username%></p>
+    <p class="card-text"><%=f.label :password%></p>
+    <p class="card-text"><%=f.password_field :password%></p>
+    <p class="card-text"><%=f.submit "Login"%></p>
+    <p class="card-text">OR</p>
+    <p class="card-text"><%=button_to "Sign Up", '/signup', method: :get %></p>
 
-<%= f.password_field :password %>
+    <p class="card-text"><%end%></p>
 
-<br>
-<br>
-
-<%= f.submit "Login" %>
-
-<br>
-<br>
-<p>OR</p>
-
-<%= button_to "Sign Up", '/signup', method: :get  %>
-
-
-<% end %>
+  </div>
 </div>

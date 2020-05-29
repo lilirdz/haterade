@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     end
 
     def home
+        @most_hated = Post.most_hated_post
     end
     
     def profile

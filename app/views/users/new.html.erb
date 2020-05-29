@@ -1,23 +1,26 @@
-<p>Sign Up</p>
+    <br>
+    <br>
+    <br>
 
-<%= form_with model: @user do |f|%>
+    <div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title signup_title">Sign Up</h5>
+    <p class="card-text"><%= form_with model: @user do |f|%></p>
+    <p class="card-text"><%=f.label :name%></p>
+    <p class="card-text"><%=f.text_field :name%></p>
+    <p class="card-text"><%=f.label :username%></p>
+    <p class="card-text"><%=f.text_field :username%></p>
+    <p class="card-text"><%=f.label :password%></p>
+    <p class="card-text"><%=f.password_field :password%></p>
+     <p class="card-text"><%=f.label :password_confirmation%></p>
+    <p class="card-text"><%=f.password_field :password_confirmation%></p>
+    <p class="emoji-picker-container">
+    <p class="card-text"><%=f.label :bio%></p>
+    <p class="card-text"><%=f.text_area :bio, size: '45x5', data: { emojiable: true }%></p>
+    </p>
+    <p class="card-text"><%=f.submit%></p>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<br>
-<%= f.label :password%>
-<%= f.password_field :password%>
-<br>
-<%= f.label :password_confirmation%>
-<%= f.password_field :password_confirmation%>
-<br>
-<p class="emoji-picker-container">
-<%= f.label :bio %>
-<%= f.text_area :bio, size: '60x5', data: { emojiable: true } %>
-</p>
-<br>
-<%= f.submit%>
-<% end %>
+    <p class="card-text"><%end%></p>
+
+  </div>
+</div>

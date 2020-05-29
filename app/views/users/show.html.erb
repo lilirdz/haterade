@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <div class="card bg-light mb-3" style="max-width: 18rem;">
   <div class="card-header"><%= @user.name %></div>
   <div class="card-body">
@@ -8,22 +9,27 @@
 </div>
 
 <div class="container text-center">
+=======
+<div class="container text-left">
+>>>>>>> f0fe19068d74763405d646dcf83462b64cd29eb3
 <p>Name: <%= @user.name %></p>
 <p>Username: <%= @user.username %></p>
 <p>Bio: <%= @user.bio %></p>
 
 
 <br>
-<p>Most Hated Post</p>
 
-<%= link_to @most_hated.title, post_path(@most_hated) %>
-</div>
 
 <div class="container text-center">
-<p>All My Posts</p><br>
+<h3>All My Posts</h3><br>
 <% @user.posts.each do |post|%>
-<%= link_to post.title, post%><br>
-<%= post.content%><br><br><br>
+<br>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to post.title, post%></h5>
+    <p class="card-text"><%= post.content%></p>
+  </div>
+</div>
 <%end%>
 
 

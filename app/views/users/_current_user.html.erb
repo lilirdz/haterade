@@ -9,12 +9,16 @@
 
 
 <div class="container text-center">
-<p>All My Posts</p><br>
+<h3>All My Posts</h3><br>
 <% @user.posts.each do |post|%>
-<%= link_to post.title, post%><br>
-<%= post.content%><br><br><br>
+<br>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to post.title, post%></h5>
+    <p class="card-text"><%= post.content%></p>
+  </div>
+</div>
 <%end%>
-
 
 <% if @user.id == session[:user_id] %>
 <button>
@@ -30,3 +34,8 @@
 <% end %>
 </div>
 
+<p>
+      <a href="/logout" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+      </p> 

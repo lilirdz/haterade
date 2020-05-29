@@ -18,8 +18,6 @@ Rails.application.routes.draw do
   
   get '/profile', to: "sessions#profile"
 
-  get '/user/:id/edit', to: "users#edit"
-
   get '/home', to: "sessions#home"
   
   # root :to =>'sessions#welcome'

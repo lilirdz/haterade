@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :username, presence: true
   validates :username, uniqueness: true
-  # validates :password, length: {minimum:8}
+  validates :password, length: {minimum:8}
 
   
   extend FriendlyId

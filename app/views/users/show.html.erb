@@ -1,28 +1,5 @@
 
-<div>
-<button style="float: right">
-<% if @user.id == session[:user_id] %>
-<%= form_with url:'/logout', method: "delete" do |f|%>
-<%= f.submit "Logout" %>
-<% end %>
-<% end %>
-</button>
-</div>
-<div class="container text-center">
-
-  <p>Name: <%= @user.name %></p>
-  <p>Username: <%= @user.username %></p>
-  <p>Bio: <%= @user.bio %></p>
-  <% if @user.id == session[:user_id] %>
-  <button style="float: right">
-  <%= link_to "Edit Profile", edit_user_path(@user) %>
-  </button>
-  <% end %>
-</div>
-
 <br>
-
-
 <div class="container text-center">
 <h3>All My Posts</h3><br>
 <div class="row">
@@ -35,11 +12,24 @@
   </div>
 </div>
 <%end%>
+<br>
+
+
+<div class="container text-center">
+  <p>Name: <%= @user.name %></p>
+  <p>Username: <%= @user.username %></p>
+  <p>Bio: <%= @user.bio %></p>
+  <% if @user.id == session[:user_id] %>
+  <button style="float: right">
+  <%= link_to "Edit Profile", edit_user_path(@user) %>
+  </button>
+  <% end %>
 </div>
+
+<div>
+  <% if @user.id == session[:user_id] %>
+  <%= form_with url:'/logout', method: "delete" do |f|%>
+  <%= f.submit "Logout" %>
+  <% end %>
+  <% end %>
 </div>
-
-
-
-
-
-

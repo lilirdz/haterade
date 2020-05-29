@@ -20,10 +20,10 @@
 <%= f.submit "Dislike" %>
 <% end %>
 <br>
-<p>Total Likes <%= @post.likes.count %> Total Dislikes <%= @post.dislikes.count %></p>
+<p>Total Likes: <%= @post.likes.count %> Total Dislikes: <%= @post.dislikes.count %></p>
 
 <%= render 'comments/form' %>
-
+<br>
 <% if @post.user_id == session[:user_id] %>
 <%= form_with model: @post, method: "delete" do |f| %>
 <%= f.submit "Delete Opinion" %>

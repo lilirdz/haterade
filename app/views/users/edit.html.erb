@@ -5,11 +5,14 @@
 <% end %>
 
 <%= form_for(@user) do |f|%>
-<%= f.label :name %>
+<h5><%= f.label :name %></h5>
+
 <%= f.text_field :name %>
 <br>
+<br>
 <p class="emoji-picker-container">
-<%= f.label :bio %>
+<h5><%= f.label :bio %></h5>
+
 <%= f.text_area :bio, size: '60x5', data: { emojiable: true } %>
 </p>
 <br>

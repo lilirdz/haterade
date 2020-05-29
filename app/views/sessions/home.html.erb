@@ -15,3 +15,44 @@
     <p class="card-text"><%= @most_hated.content%></p>
   </div>
 </div>
+
+<br>
+<br>
+<div class="container text-center">
+<br>
+  <h3>- Latest Unpopular Opinion -</h3><br>
+  <div class="row">
+      <% @latest_post.title%>
+      <br>
+    <div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%= link_to @latest_post.title, @latest_post%></h5>
+    <p class="card-text"><%= @latest_post.content%></p>
+  </div>
+</div>
+
+<br>
+<br>
+<div class="container text-center">
+<br>
+  <h3>- Most Popular Category -</h3><br>
+  <div class="row">
+      <br>
+    <div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%= link_to @popular_category.name, @popular_category%></h5>
+  </div>
+</div>
+
+<br>
+<br>
+<div class="container text-center">
+<br>
+  <h3>- Total Number of Unpopular Opinions -</h3><br>
+  <div class="row">
+      <br>
+    <div class="card" style="width: 28rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%=@total_posts%></h5>
+  </div>
+</div>

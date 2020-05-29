@@ -1,15 +1,5 @@
 
 <br>
-<<<<<<< HEAD
-<h3>Written By: <%= link_to @post.user.name, user_path(@post.user.username) %></h3>
-
-<%= form_with url:"/like", method: :post do |f| %>
-<%= f.hidden_field :post_id, :value => @post.id %>
-<%= f.hidden_field :user_id, :value => session[:user_id] %>
-<%= f.submit "Like", data:{disable_with: "Liked!"} %>
-<% end %>
-=======
->>>>>>> master
 <br>
 <br>
 <br>
@@ -22,25 +12,23 @@
     <h6 class="card-subtitle mb-2 text-muted">Written By: <%= link_to @post.user.name, user_path(@post.user.username) %></h6>
     <p class="card-text"><h3><%= @post.content %></h3></p>
     <div>
-    <p>Total Likes: <%= @post.likes.count %></p>
+    <p>Total Loves: <%= @post.likes.count %></p>
+    <p>Total Hates: <%= @post.dislikes.count %></p>
 
-    <img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/T812A2PA3140PT17X52Y54D11616160S67/views/1,width=650,height=650,appearanceId=2.jpg" class="img-fluid-post" alt="Responsive image">
+
+    
     <button class = "btn float-right">
   <%= form_with url:"/like", method: :post do |f| %>
   <%= f.hidden_field :post_id, :value => @post.id %>
   <%= f.hidden_field :user_id, :value => session[:user_id] %>
-  <%= f.submit "#{@post.likes.count} Likes" %>
+  <%= f.submit "#{@post.likes.count} Love" %>
   <% end %>
 </button>
 <button class = "btn float-left">
 <%= form_with url:"/dislike", method: :post do |f| %>
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
-<<<<<<< HEAD
-<%= f.submit "Dislike", data:{disable_with: "Disliked!"} %>
-=======
-<%= f.submit "#{@post.dislikes.count} Dislike" %>
->>>>>>> master
+<%= f.submit "#{@post.dislikes.count} Hate" %>
 <% end %>
 </button>
   </div>
@@ -50,7 +38,9 @@
 <%= render 'comments/form' %>
 <br>
 <% if @post.user_id == session[:user_id] %>
+  <button class = "edit-button">
     <%= link_to "Edit Post", edit_post_path %>
+    </button>
 <% end %>
 
 

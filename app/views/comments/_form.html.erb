@@ -1,8 +1,4 @@
-<% if flash[:errors] %>
-<% flash[:errors].each do |error| %>
-<%= error %>
-<% end %>
-<% end %>
+
 
 <%= form_with model: @comment do |f| %>
 <%= f.hidden_field :post_id  %>

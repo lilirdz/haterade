@@ -10,6 +10,9 @@ class SessionsController < ApplicationController
 
     def home
         @most_hated = Post.most_hated_post
+        @total_posts = Post.total_posts
+        @latest_post = Post.latest_post
+        @popular_category = Category.category_most_posts
     end
     
     def profile
@@ -22,10 +25,8 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-            # flash[:errors] = "Your username and/or password is incorrect. Please try again."
-            # redirect_to '/login'
-            redirect_to signup_path
-
+            # flash[:errors] = "Your username and/or password are incorrect. Please try again."
+            redirect_to login_path
         end
     end
 

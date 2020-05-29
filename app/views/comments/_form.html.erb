@@ -8,9 +8,10 @@
 <%= f.hidden_field :post_id  %>
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
 
-<%= f.label "Fight Me!" %>
+<h4><%= f.label "Fight Me!" %></h4>
 <br>
 <%= f.text_area :content, size: '60x5' %>
 <br>
 <%= f.submit "Post Comment" %>
 <% end %>
+

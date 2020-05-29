@@ -15,9 +15,8 @@ Rails.application.routes.draw do
 
   post '/like', to: "likes#create"
   post '/dislike', to: "dislikes#create"
-  # get '/profile', to: "/users/#{@user.id}"
+  
   get '/profile', to: "sessions#profile"
-
 
   get '/home', to: "sessions#home"
   

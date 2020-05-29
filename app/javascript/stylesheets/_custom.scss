@@ -3,6 +3,10 @@ body {
   margin: auto;
 }
 
+nav li {
+  color: red;
+}
+
 a,
 a:hover {
   color: #e95c20ff;
@@ -11,6 +15,12 @@ a:hover {
 
 h1 {
   color: #006747ff;
+  text-align: center;
+}
+
+h3,
+h4 {
+  color: #e95c20ff;
   text-align: center;
 }
 
@@ -44,6 +54,8 @@ li {
   /* Added */
   margin-bottom: 10px;
   /* Added */
+  border-top: 10px solid #006747ff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input {
@@ -59,4 +71,20 @@ input {
   @include media-breakpoint-only(xl) {
     column-count: 5;
   }
+}
+
+.profile-picture {
+  width: 225px;
+  height: 225px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.list-group {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

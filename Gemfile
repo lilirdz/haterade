@@ -28,7 +28,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'rails_emoji_picker'
 #run rails g rails_emoji_picker:install
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 # Add jquery for bootstrap requirement
 gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
